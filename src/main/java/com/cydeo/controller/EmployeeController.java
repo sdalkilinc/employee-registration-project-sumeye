@@ -10,7 +10,6 @@ public class EmployeeController {
 
     @GetMapping("/register")
     public String createEmployee(){
-
         return "employee/employee-create";
     }
 
