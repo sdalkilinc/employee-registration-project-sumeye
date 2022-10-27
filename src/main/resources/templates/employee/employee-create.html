@@ -14,10 +14,9 @@
 
 <div class="container">
     <div class="d-flex justify-content-center">
-
         <div class="card">
             <h2 class="card-header bg-info text-white p-5">
-                Welcome To Employee Registration Page
+                Welcome to Employee Registration Page
             </h2>
             <div class="card-body">
                 <form th:object="${employee}" th:action="@{/employee/insert}" method="post">
@@ -27,7 +26,7 @@
                             <input type="text" class="form-control" id="inputFirstName4" placeholder="First Name" th:field="*{firstName}">
                             <div class="text-danger" th:if="${#fields.hasErrors('firstName')}">
                                 <ol>
-                                    <li th:each="error : ${#fields.errors()}" th:text="${error}"></li>
+                                    <li th:each="error : ${#fields.errors('firstName')}" th:text="${error}"></li>
                                 </ol>
                             </div>
                         </div>
@@ -79,12 +78,8 @@
             </div>
         </div>
 
-
     </div>
-
 </div>
-
-
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
