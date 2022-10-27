@@ -6,37 +6,40 @@ import org.springframework.format.annotation.DateTimeFormat;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 
-@Setter
 @Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
 public class Employee {
 
+//    @NotNull        --->    Field shouldn't be null
+//    @NotEmpty       --->    Field shouldn't be ""
+//    @NotBlank       --->    Field shouldn't be "       "
 
-//    @NotNull  Field should not be null
-//    @NotEmpty Field should not be ""
-//    @NotBlank Field should not be "          "
-//
-    //@NotNull -> @NotNull
-    //@NotEmpty -> @NotNull + @NotEmpty
-    //@NotBlank -> @NotNull + @NotEmpty + @NotBlank
+//    @NotNull -> @NotNull
+//    @NotEmpty -> @NotNull + @NotEmpty
+//    @NotBlank -> @NotNull + @NotEmpty + @NotBlank
 
     @NotBlank
-    @Size (max = 12, min = 2)
+    @Size(max = 12, min = 2)
     private String firstName;
+
+    //    @NotBlank
+//    @Size(max = 12, min = 2)
     private String lastName;
 
-    //Thymeleaf accepts yyyy-MM-dd, but localDate accepts mm-dd-yyyy yyyy-dd-mm
-//    @NotNull
+    // Thymeleaf accepts yyyy-MM-dd, but LocalDate accepts mm-dd-yyyy  -   yyyy-dd-mm
+
+    //    @NotNull
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthday;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Email
     private String email;
 
-//    @NotBlank
+    //    @NotBlank
 //    @Pattern(regexp = "(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{4,}")
     private String password;
 
